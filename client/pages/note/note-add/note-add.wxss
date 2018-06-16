@@ -1,0 +1,5 @@
+/* pages/note/note-add/note-add.wxss */
+
+.note-add-confirm {
+  margin: 30rpx 50rpx 0;
+}

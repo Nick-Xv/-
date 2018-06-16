@@ -1,0 +1,74 @@
+.plan-container {
+  margin:20rpx;
+  background-color:#fff;
+  border: 1px solid #ededed;
+  padding-bottom: 5px;
+  box-shadow: 0rpx 3rpx 6rpx 3rpx rgba(0,0,0,0.1);
+}
+
+.plan-img-date {
+  flex-direction:row;
+  display:flex;
+  margin:20rpx;
+}
+
+.plan-img-date image{
+  width: 180rpx;
+  height: 252rpx;
+  box-shadow: 3rpx 3rpx 6rpx 3rpx rgba(0,0,0,0.1);
+}
+
+.plan-date { 
+  flex-direction:column;
+  display:flex;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #7F8389;
+
+}
+
+.plan-title {
+  width: 400rpx;
+  font-size: 36rpx;
+  color: #2d2d2d;
+}
+
+.plandate {
+  width: 400rpx;
+}
+
+.plan-button-list {
+  display: inline-block;
+  align-items: center;
+}
+
+.plan-button {
+  margin-right: 5rpx;
+}
+
+
+.plan-change-schedule {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.plan-schedule-text {
+  margin-right: 15rpx;
+}
+
+.refresh-btn {
+  color: #3cc51f;
+  font-size: 32rpx;
+}
+
+.del-btn{
+    color: red;
+  font-size: 32rpx;
+float: right;
+  padding-left: 30rpx;
+}
+
+.refresh-btn:active {
+  color: #52a341;
+}

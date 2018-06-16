@@ -1,0 +1,224 @@
+/* pages/setting/setting.wxss */
+.container {
+    background-color: #efeff4;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+.category-item {
+    width: 100%;
+    margin-top: 20rpx;
+    border-top: 1rpx solid #d9d9d9;
+    border-bottom: 1rpx solid #d9d9d9;
+    background-color: #fff;
+}
+.category-item.personal-info {
+    height: 150rpx;
+    display: flex;
+    padding: 20rpx 0;
+}
+.category-item.personal-info .user-avatar {
+    margin: 0 30rpx;
+    margin-top: 10rpx;
+    width: 130rpx;
+    height: 130rpx;
+    position: relative;
+}
+.category-item.personal-info .user-avatar image {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    border-radius: 2rpx;
+}
+.category-item.personal-info .user-name {
+    margin-right: 30rpx;
+    flex: 1;
+    padding-top: 10rpx;
+}
+.detail-item{
+    display: flex;
+    margin-left: 30rpx;
+    border-bottom: 1px solid RGBA(217, 217, 217, .4);
+    height:85rpx;
+    align-items: center;
+}
+.detail-item:last-child{
+    border-bottom:none;
+}
+.detail-item image{
+    height: 40rpx;
+    width:40rpx;
+
+}
+.detail-item text{
+    color:#7F8389;
+    font-size:28rpx;
+    flex:1;
+    margin-left: 30rpx;
+}
+.detail-item .detail-item-btn{
+    width: 50rpx;
+    color: #d9d9d9;
+    height: 40rpx;
+    margin-right: 20rpx;
+    text-align: center;
+}
+.detail-item .detail-item-btn::after{
+    display: inline-block;
+    content:'';
+    width: 16rpx;
+    height: 16rpx;
+    color: #d9d9d9;
+    margin-top: 8rpx;
+    border:3rpx #d9d9d9 solid;
+    border-top-color:transparent;
+    border-left-color:transparent;
+    transform: rotate(-45deg);
+}
+
+.user-nickname {
+  color: #7F8389;
+  font-weight: 500;
+  font-size:32rpx;
+}
+
+.user-detail {
+  color: #7F8389;
+  font-weight: 500;
+  font-size:30rpx;
+}
+
+/*button*/
+.btn {
+  width: 80%;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 40rpx 10%;
+  background: #000;
+  color: #fff;
+}
+
+/*mask*/
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+.drawer_box {
+  width: 650rpx;
+  height: 750rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  z-index: 1001;
+  background: #FAFAFA;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+
+.drawer_title{
+  padding:15px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+}
+.drawer_content {
+  height: 550px;/*超出父盒子高度可滚动*/
+}
+
+.btn_ok{
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #E8E8EA;
+  color: #3CC51F;
+}
+
+.top{
+	padding-top:8px;
+}
+.bottom {
+	padding-bottom:8px;
+}
+.title {
+	height: 30px;
+	line-height: 30px;
+	width: 160rpx;
+	text-align: center;
+	display: inline-block;
+	font: 300 28rpx/30px "microsoft yahei";
+}
+
+.input_base {
+	border: 2rpx solid #ccc;
+	padding-left: 10rpx;
+	margin-right: 50rpx;
+}
+.input_h30{
+	height: 30px;
+	line-height: 30px;
+}
+.input_h60{
+	height: 60px;
+}
+.input_view{
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000;
+	line-height: 30px;
+}
+
+input {
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000 ;
+}
+radio{
+	margin-right: 20px;
+}
+.grid { display: -webkit-box; display: box; }
+.col-0 {-webkit-box-flex:0;box-flex:0;}
+.col-1 {-webkit-box-flex:1;box-flex:1;}
+.fl { float: left;}
+.fr { float: right;}
+
+
+/* pages/qrcode/qrcode.wxss */
+.container-box{background-color: #efeff4;height: 100vh;
+display: flex;  
+  flex-direction: row;  
+  justify-content: center;  }
+.img-box{padding-left:36rpx;background-color: #FAFAFA;position:relative}
+.img-box image{width: 580rpx;height: 580rpx;background-color: #FAFAFA;}
+.input-row{
+    margin: 30rpx auto;
+    border-bottom: 1rpx solid #e5e5e5;
+    border-top: 1rpx solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    padding: 0 32rpx; 
+    background-color: #fff;
+    font-size: 34rpx;
+    color: #000
+}
+
+.input-row input{margin-left: 100rpx;flex: 1}
+.mybtn{width:686rpx;margin: 60rpx auto }
+.mask{position: fixed;top: 0;left: 0;z-index: 3; width: 100%;height: 100%;opacity: 0;}
+.canvas-box{position: fixed;top:999999rpx;left: 0}

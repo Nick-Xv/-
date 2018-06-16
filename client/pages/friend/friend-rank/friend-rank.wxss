@@ -1,0 +1,14 @@
+/* pages/friend/friend-rank/friend-rank.wxss */
+
+.rank-num {
+  margin-right: 30rpx;
+  font-size: 40rpx;
+  font-family:monospace;
+  font-style:italic;
+  color: #1aad19;
+}
+
+.friend-name {
+  margin-left: 30rpx;
+  color: #7F8389;
+}

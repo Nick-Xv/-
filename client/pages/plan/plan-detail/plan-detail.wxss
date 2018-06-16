@@ -1,0 +1,79 @@
+/* pages/plan/plan-detail/plan-detail.wxss */
+@import "../plan-item/plan-item-tpl.wxss";
+@import "../../../weui.wxss";
+
+.plan-detail-button {
+  margin-right: 15rpx;
+}
+
+.note-time {
+  margin-top: 10rpx; 
+  color: #ccc;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.refresh-btn {
+  color: #3cc51f;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+}
+
+.refresh-btn-start {
+  color: #3cc51f;
+  font-size: 32rpx;
+}
+
+.refresh-btn-new {
+  color: #3cc51f;
+  margin-left: 30rpx;
+  font-size: 33rpx;
+}
+
+.delete-btn {
+  color: #e42000;
+  font-size: 33rpx;
+}
+
+.refresh-btn:active {
+  color: #52a341;
+}
+
+.note-title-create {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+.note-change {
+  color: #88cb7e;
+  margin-left: 20rpx;
+}
+
+.note-change:active {
+  color: #3cc51f;
+}
+
+.note-delete {
+  color: #fba0bc;
+  margin-left: 20rpx;
+}
+
+.note-delete:active {
+  color: #ff9095;
+}
+
+
+.test{
+    font-size: 25rpx;
+    position: absolute;
+    text-shadow: 5px 2px 6px rgba(0,0,0,0.3);
+    letter-spacing: 2rpx;
+    color: white;
+    width: 160rpx;
+    text-align:center;  
+    margin-left: 13rpx;
+    margin-top: 40rpx;
+}

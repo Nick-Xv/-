@@ -1,0 +1,41 @@
+/* pages/auth/auth.wxss */
+@import "../../weui.wxss";
+.start{
+    float:none
+}
+
+.plan-button-list {
+  display: inline-block;
+  align-items: center;
+}
+
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blue;
+}
+
+.imgmain{
+
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.viewmain{
+    padding-top: 30rpx;
+    display: flex;  
+  flex-direction: row;  
+  justify-content: center;  
+}
+
+.maintitle{
+    font-size: 35rpx;
+    margin-bottom: 50rpx;
+}
+
+.btnmain{
+    width: 450rpx;
+}

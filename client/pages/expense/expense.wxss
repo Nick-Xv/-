@@ -1,0 +1,26 @@
+/* pages/expense/expense.wxss */
+.myCanvas{
+  background-color: #f4f4f4;
+}
+.downloadChart {
+  font-size: 16px;
+  background: #699fed;
+  border-radius: 6px;
+  color: white;
+  width: 70%;
+  margin-top: 32px;
+}
+.head-banner{
+  height: 300rpx;
+  background-color: #FDD835;
+}
+.head-title{
+  padding: 40rpx;
+  font-size: 2em;
+  color: white;
+  position: relative;
+  top: 150rpx;
+}
+.whiteback{
+  background-color: #ffffff;
+}

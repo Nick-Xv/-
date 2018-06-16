@@ -1,0 +1,28 @@
+<template name="planItemTpl">
+    <view class="plan-container">
+        <view class="plan-img-date">
+            <image src="{{item.bookImgUrl}}" mode="aspectFill"/>
+            <view class="plan-date">
+                <text class='plan-title'>{{item.bookName}}</text>
+                <text class='plandate'>日期：{{item.dateStart}} 至 {{item.dateFinish}}</text>
+                <view class='plan-change-schedule'>
+                    <text class='plan-schedule-text'>进度：{{item.pagesFinished}}页 / {{item.pagesTotal}}页</text>
+                    <picker class="plan-button" bindchange="bindPickerChange" value="{{item.pagesFinished}}" range="{{item.pageArray}}"  data-plan-id="{{item.planId}}">
+                    <text class="refresh-btn" data-plan-id="{{item.planId}}" hidden="{{!visitMode}}">更新</text>
+                    </picker>
+                </view>
+                <view>
+                    <progress percent='{{item.planPercent}}' active='true' show-info='true'></progress>
+                </view>
+
+                <view class="plan-button-list">
+                    
+                    <button class="weui-btn plan-button" type="primary" plain="true" size="mini" catchtap="onTapToDetail" data-plan-id="{{item.planId}}">查看详情</button>
+                    <button class="weui-btn plan-button" type="warn" plain="true" size="mini" bindtap="openConfirm" data-plan-id="{{item.planId}}"  hidden="{{!visitMode}}">删除</button>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+</template>
+

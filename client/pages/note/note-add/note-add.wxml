@@ -1,0 +1,32 @@
+<!--pages/note/note-add/note-add.wxml-->
+<form bindsubmit="bindFormSubmit">
+<view class='page'>
+  <view class="weui-cells__title">笔记</view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+          <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="请输入文本" bindinput="bindNoteInput" maxlength="200" style="height: 600rpx" value='{{note.content}}' name="textarea"/>
+              <view class="weui-textarea-counter">{{textNum}}/200</view>
+          </view>
+      </view>
+  </view>
+
+<view class="weui-cells__title">隐私</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">公开给好友</view>
+            <view class="weui-cell__ft">
+                <switch checked="{{!note.isPrivate}}" bindchange="switchChangePrivacy"/>
+            </view>
+        </view>
+    </view>
+
+    <view class="note-add-confirm" hidden='{{changeNote}}'>
+        <button class="weui-btn" type="primary" catchtap="onTapToConfirm" form-type="submit">添加</button>
+    </view>
+    <view class="note-add-confirm" hidden='{{!changeNote}}'>
+        <button class="weui-btn" type="primary" catchtap="onTapToConfirmChange" form-type="submit">修改</button>
+    </view>
+</view>
+
+</form>

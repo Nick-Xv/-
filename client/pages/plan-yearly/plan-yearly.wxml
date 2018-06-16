@@ -1,0 +1,22 @@
+<!--pages/plan-yearly/plan-yearly.wxml-->
+
+<import src="../component/book-cover.wxml"/>
+<view>
+    <view class='head-banner'>
+        <text class='head-title'>完成度：{{finished}}/{{total}}</text>
+    </view>
+    <view style='margin-left:40rpx; margin-top:40rpx'>
+        <view class="weui-article__section">
+            <view class="weui-article__title">正在阅读：</view>
+            <template is="book-cover" data="{{bookList: booksInProgress}}"/>
+        </view>
+        <view class="weui-article__section">
+            <view class="weui-article__title" wx:if="{{toRead}}">将要阅读：</view>
+            <template is="book-cover" data="{{bookList: booksToRead}}"/>
+        </view>
+        <view class="weui-article__section">
+            <view class="weui-article__title">已完成：</view>
+            <template is="book-cover" data="{{bookList: booksFinished}}"/>
+        </view>
+    </view>
+</view>

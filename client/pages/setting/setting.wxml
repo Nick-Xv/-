@@ -1,0 +1,60 @@
+<!--pages/setting/setting.wxml-->
+<view class="container">
+    <view class="category-item personal-info">
+        <view class="user-avatar">
+            <image src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"></image>
+        </view>
+        <view class="user-name">
+            <view class="user-nickname">
+                <text>{{userInfo.nickName}}</text>
+            </view>
+            <view class="user-detail">
+                <text>已经读完：{{planFinished}} / 年度计划：{{planNumYear}}</text>
+            </view>
+        </view>
+    </view>
+    <view hidden='{{logged}}'>
+        <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">登录</button>
+    </view>
+    <view class="category-item">
+        <block wx:key="{{title}}" wx:for="{{cache}}">
+        <view class="detail-item" catchtap="{{item.tap}}">
+            <image src="{{item.iconurl}}"></image>
+            <text>{{item.title}}</text>
+            <view class="detail-item-btn"></view>
+        </view>
+        </block>
+    </view>
+    <view class="category-item">
+        <block wx:key="{{title}}" wx:for="{{device}}">
+            <view class="detail-item" catchtap="{{item.tap}}" data-statu="open">
+                <image src="{{item.iconurl}}"></image>
+                <text>{{item.title}}</text>
+                <view class="detail-item-btn"></view>
+            </view>
+        </block>
+    </view>
+</view>
+
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_title">我的二维码</view>
+    <view class="drawer_content">
+        <view class="top grid">
+            <view class="container-box">
+                <view class="img-box">
+                    <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+                </view>
+            </view>
+            <view hidden="{{maskHidden}}" class="mask"></view>
+                <view class="canvas-box">
+                    <canvas  hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+            </view>
+        </view>
+    </view>
+</view>
+
+<modal hidden="{{hiddenmodalput}}" title="修改年度计划" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='number' bindinput="inputYearPlan" placeholder="请输入内容"/>  
+</modal>  

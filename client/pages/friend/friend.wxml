@@ -1,0 +1,47 @@
+<!--pages/friend/friend.wxml-->
+<view class="container">
+<view class="category-item">
+    <block wx:key="{{title}}" wx:for="{{device}}">
+      <view class="detail-item" catchtap="{{item.tap}}">
+        <image src="{{item.iconurl}}"></image>
+        <text>{{item.title}}</text>
+        <view class="detail-item-btn"></view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="weui-cells__title" style='padding-top:80rpx;'>好友列表
+    <image class='iconscan' src='/images/icon/wx_app_scan.png' catchtap="scanQRCode"></image>
+    <image class='iconcode' src='/images/icon/wx_app_scan_code.png' catchtap="powerDrawer" data-statu="open"></image>
+</view>
+
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_title">我的二维码</view>
+    <view class="drawer_content">
+        <view class="top grid">
+            <view class="container-box">
+                <view class="img-box">
+                    <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+                </view>
+            </view>
+            <view hidden="{{maskHidden}}" class="mask"></view>
+                <view class="canvas-box">
+                    <canvas  hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title">
+    <block wx:key="{{userId}}" wx:for="{{friends}}" wx:for-item="item" wx:for-index="idx">
+        <navigator url="friend-detail/friend-detail?id={{item.userId}}&avatarUrl={{item.avatarUrl}}&nickName={{item.nickName}}&planFinished={{item.planFinished}}&planNumYear={{item.planNumYear}}" class="weui-cell weui-cell_access friend-cell" hover-class="weui-cell_active" data-user-id="{{item.userId}}">
+            <view class="weui-cell__hd">
+                <image src="{{item.avatarUrl}}" style="margin-right: 5px;vertical-align: middle;width:50px; height: 50px;"></image>
+            </view>
+            <view class="weui-cell__bd friend-name">{{item.nickName}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+    </block>
+</view>

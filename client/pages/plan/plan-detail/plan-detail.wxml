@@ -1,0 +1,63 @@
+<!--pages/plan/plan-detail/plan-detail.wxml-->
+<view class="plan-container">
+    <view class="plan-img-date">
+        <image src="{{plan.bookImgUrl}}" mode="aspectFill"/>
+        <text class='test' wx:if='{{plan.isbn13 == "0"}}'>{{plan.bookName}}</text>
+        <view class="plan-date">
+        
+        <text class='plan-title'>{{plan.bookName}}</text>
+        <text>日期：{{plan.dateStart}} 至 {{plan.dateFinish}}</text>
+        <view class='plan-change-schedule'>
+            <text class='plan-schedule-text'>进度：{{plan.pagesFinished}}页 / {{plan.pagesTotal}}页</text>
+            <picker class="plan-button" bindchange="bindPickerChange" value="{{plan.pagesFinished}}" range="{{plan.pageArray}}"  data-plan-id="{{plan.planId}}">
+            <text class="refresh-btn" data-plan-id="{{plan.planId}}" hidden='{{visitMode}}'>-更新-</text>
+            </picker>
+        </view>
+
+        <view>
+            <progress percent='{{plan.planPercent}}' active='true' show-info='true'></progress>
+        </view>
+
+            <view class="plan-button-list" hidden='{{visitMode?false:true}}' >
+        <text class="refresh-btn-start" catchtap="onTapToMain">-回到首页-</text>
+    </view>
+            
+        <view class="plan-button-list" hidden='{{visitMode}}'>
+            <button class="weui-btn plan-detail-button" type="primary" plain="true" size="mini" catchtap="onTapToChangePlan" data-plan-id="{{plan.planId}}">修改</button>
+            <button class="weui-btn plan-detail-button" type="primary" plain="true" size="mini" bindtap="openFinishConfirm" data-plan-id="{{plan.planId}}">完成</button>
+            <button class="weui-btn plan-detail-button" type="warn" plain="true" size="mini" bindtap="openConfirm" data-plan-id="{{plan.planId}}">删除</button> 
+        </view>
+        </view>
+    </view>
+</view>
+
+<view class="plan-container">
+    <view class="page__hd">
+        <view class="page__title">计划描述</view>
+        <text class="page__desc">{{plan.description}}</text>
+    </view>
+</view>
+<view class="plan-container">
+    <view class="page__hd">
+        <view class='note-title-create'>
+        <view class="page__title">读书笔记</view>
+        <text class="refresh-btn-new" catchtap="onCreateNoteTap" data-plan-id="{{plan.planId}}" hidden='{{visitMode}}'>新建笔记</text>
+        </view>
+        
+        <block wx:key="{{noteId}}" wx:for="{{notes}}" wx:for-item="item" wx:for-index="idx">
+            <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+            </view>
+            <view class='note-item'>
+            <text class="page__desc">{{item.data.content}}</text>
+            <view class="page__desc note-time">
+                <text class='note-time-text'>{{item.data.createTime}}</text>
+                <view hidden='{{visitMode}}'>
+                <text class='note-change' catchtap="onTapToChange" data-note-id="{{item.data.noteId}}">修改</text>
+                <text class='note-delete' catchtap="onTapToDelete" data-note-id="{{item.data.noteId}}">删除</text>
+                </view>
+            </view>
+            </view>
+        </block>
+    </view>
+</view>

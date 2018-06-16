@@ -1,0 +1,79 @@
+{
+	"client": "./client",
+	"svr": "./server",
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "wxf21ba90d051c4161",
+	"projectname": "Final",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "cloud测试",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "setting",
+					"pathName": "pages/setting/setting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加计划",
+					"pathName": "pages/plan/plan-add/plan-add",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "计划详情",
+					"pathName": "pages/plan/plan-detail/plan-detail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "添加笔记",
+					"pathName": "pages/note/note-add/note-add",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "friend",
+					"pathName": "pages/friend/friend",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "读书排行榜",
+					"pathName": "pages/friend/friend-rank/friend-rank",
+					"query": ""
+				}
+			]
+		}
+	}
+}

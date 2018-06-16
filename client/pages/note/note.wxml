@@ -1,0 +1,24 @@
+<!--pages/note/note.wxml-->
+<view class="plan-container">
+    <view class="page__hd">
+        <view class='note-title-create'>
+            <view class="page__title">读书笔记</view>
+        </view>
+        
+        <block wx:key="{{noteId}}" wx:for="{{notes}}" wx:for-item="item" wx:for-index="idx">
+            <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+                </view>
+                <view class='note-item'>
+                <text class="page__desc">{{item.data.content}}</text>
+                <view class="page__desc note-time">
+                    <text class='note-time-text'>{{item.data.createTime}}</text>
+                    <view hidden='{{visitMode}}'>
+                    <text class='note-change' catchtap="onTapToChange" data-note-id="{{item.data.noteId}}">修改</text>
+                    <text class='note-delete' catchtap="onTapToDelete" data-note-id="{{item.data.noteId}}">删除</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

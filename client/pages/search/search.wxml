@@ -1,0 +1,47 @@
+<!--pages/search/search.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <navigator url='../search-in/search-in?immediateReturn=false' style="position:fixed; top:0;width: 750rpx;z-index: 999999999">
+            <view class="weui-search-bar" >
+                <view class="weui-search-bar__form">
+                    <view class="weui-search-bar__box">
+                        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                        <view type="text" class="weui-search-bar__input" ><text class='searchtext'>搜索</text></view>
+                        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                            <icon type="clear" size="14"></icon>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="search" style='color:#006DF0'>搜索</view>
+            </view>
+        </navigator>
+
+        <view class="weui-cells__title" style='padding-top:80rpx;'>最受欢迎图书排行榜</view>
+            <block wx:key="id" wx:for="{{books}}" wx:for-index="idx">
+                <navigator class="ibox-list-nav"  url="../book-detail/book-detail?id={{item.isbn13}}&isIsbn={{true}}">
+                    <view class="ibox-list">
+                        
+                        <image class="ibox-list-img" src="{{item.image}}"></image>
+                        <view class="ibox-list-infos">
+                            <view class="ibox-list-title">{{item.title}}</view>
+                            <view class="ibox-list-star">
+                                <image  class="star-img " src="{{item.blocks}}"></image>
+                                <text class="average-rating">{{item.rating}}</text>
+                            </view>
+                            <view class="ibox-list-tags">
+                            </view>
+                            <view class="ibox-list-author">作者：{{item.author}}</view>
+                            <view class="ibox-list-author">{{item.count}}人正在读</view>
+
+                            <view class="ibox-list-summary">{{item.summary}}</view>
+                        </view>
+                        <view class="rank-num">{{idx+1}}</view>
+                    </view>
+                    <view class="widget-line"></view>
+                </navigator>
+            </block>
+        </view>
+
+    
+    
+</view>

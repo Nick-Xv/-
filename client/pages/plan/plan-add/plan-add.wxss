@@ -1,0 +1,10 @@
+/* pages/plan/plan-add/plan-add.wxss */
+@import "../../../weui.wxss";
+
+.blank {
+  margin: 50rpx;
+}
+
+.plan-add-confirm {
+  margin: 30rpx 50rpx 0;
+}

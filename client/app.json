@@ -1,0 +1,60 @@
+{
+    "pages": [
+        "pages/plan/plan",
+        "pages/auth/auth",
+        "pages/planAll/plan",
+        "pages/plan/plan-detail/plan-detail",
+        "pages/plan/plan-add/plan-add",
+        "pages/expense/expense",
+        "pages/plan-yearly/plan-yearly",
+        "pages/note/note",
+        "pages/note/note-add/note-add",
+        "pages/friend/friend",
+        "pages/friend/friend-detail/friend-detail",
+        "pages/friend/friend-rank/friend-rank",
+        "pages/friend/qrcode/qrcode",
+        "pages/setting/setting",
+        "pages/search-in/search-in",
+        "pages/search/search",
+        "pages/book-detail/book-detail"
+    ],
+    "window": {
+        "enablePullDownRefresh": false,
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#10aa58",
+        "navigationBarTitleText": "Reading Plans",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#666666",
+        "selectedColor": "#10aa58",
+        "list": [
+            {
+                "pagePath": "pages/plan/plan",
+                "text": "计划",
+                "iconPath": "res/icons/event.png",
+                "selectedIconPath": "res/icons/event-selected.png"
+            },
+            {
+                "pagePath": "pages/search/search",
+                "text": "发现",
+                "iconPath": "res/icons/explore.png",
+                "selectedIconPath": "res/icons/explore-selected.png"
+            },
+            {
+                "pagePath": "pages/friend/friend",
+                "text": "好友",
+                "iconPath": "res/icons/friend.png",
+                "selectedIconPath": "res/icons/friend2.png"
+            },
+            {
+                "pagePath": "pages/setting/setting",
+                "text": "我的",
+                "iconPath": "res/icons/user.png",
+                "selectedIconPath": "res/icons/user-selected.png"
+            }
+        ],
+        "position": "bottom"
+    }
+}

@@ -1,0 +1,106 @@
+<!--pages/plan/plan-add/plan-add.wxml-->
+<view class='page'>
+    <view class="weui-cells__title">计划信息</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">书名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入书名" bindinput="inputName" value='{{plan.bookName}}'/>
+            </view>
+            <view class="weui-cell__ft">
+                <view class="weui-vcode-btn" bindtap='search'>查询</view>
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">计划页数</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入书籍页数" type="number" bindinput="inputPage" value='{{plan.pagesTotal}}'/>
+            </view>
+            <view class="weui-cell__ft">
+                <view class="weui-vcode-btn" bindtap='scan'>扫码</view>
+                
+            </view>
+            
+        </view>
+
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">当前页数</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="0" type="number" bindinput="inputPageF" value='{{plan.pagesFinished}}'/>
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">价格</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入购书价格" type="digit" bindinput="inputPrice" value='{{plan.price}}'/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">开始日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{plan.dateStart}}" start="2015-09-01" end="2025-12-01" bindchange="bindDateChangeStart">
+                    <view class="weui-input">{{plan.dateStart}}</view>
+                </picker>
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">结束日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{plan.dateFinish}}" start="{{plan.dateStart}}" end="2025-12-01" bindchange="bindDateChangeFinish">
+                    <view class="weui-input">{{plan.dateFinish}}</view>
+                </picker>
+            </view>
+        </view>
+
+    </view>
+
+    <view class='blank'></view>
+
+    <view class="weui-cells__title">隐私</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">公开给好友</view>
+            <view class="weui-cell__ft">
+                <switch checked="{{!plan.isPrivate}}" bindchange="switchChangePrivacy"/>
+            </view>
+        </view>
+    </view>
+
+    <view class='blank'></view>
+
+    <view class="weui-cells__title">计划描述</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea class="weui-textarea" placeholder="请输入关于计划的描述" style="height: 6.6em" bindinput="inputDescription" value='{{plan.description}}'/>
+                <view class="weui-textarea-counter">{{textNum}}/140</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="plan-add-confirm" hidden='{{changePlan}}'>
+        <button class="weui-btn" type="primary" catchtap="onTapToConfirm">添加</button>
+    </view>
+    <view class="plan-add-confirm" hidden='{{!changePlan}}'>
+        <button class="weui-btn" type="primary" catchtap="onTapToConfirmChange">修改</button>
+    </view>
+
+    <view class='blank'></view>
+  
+</view>

@@ -1,0 +1,12 @@
+<template name="book-cover">
+    <view class='book-cover-list'>
+      <view wx:for="{{bookList}}" wx:key="{{bookList}}">
+         <navigator  url="../plan/plan-detail/plan-detail?id={{item.planId}}"> 
+            <view class="book-cover">
+                <image class="book-cover-img" src="{{item.bookImgUrl}}"></image>
+                <text class='test' wx:if='{{item.isbn13 == "0"}}'>{{item.bookName}}</text>
+            </view>
+         </navigator> 
+      </view>
+    </view>
+</template>

@@ -1,0 +1,9 @@
+<view class='viewmain'>
+    <image src='../../res/icons/main.png' class='imgmain'></image>
+</view>
+<view class='viewmain'>
+    <text class='maintitle'>航读书小程序</text>
+</view>
+<view class='viewmain'>
+    <button class='btnmain' type="primary"  bindtap="primary" open-type="getUserInfo" bindgetuserinfo="aftertap"> 微信快速登录 </button>
+</view>

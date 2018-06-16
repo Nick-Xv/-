@@ -1,0 +1,47 @@
+<!--pages/friend/friend-detail/friend-detail.wxml-->
+
+
+<view>
+    <view class="category-item personal-info">
+        <view class="user-avatar">
+            <image src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="user-name">
+            <view class="user-nickname">
+                <text>{{userInfo.nickName}}</text>
+            </view>
+            <view class="user-nickname">
+                <text>年度计划：{{userInfo.planNumYear}} / 已经读完：{{userInfo.planFinished}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='title-contain'>
+    <view class="weui-cells__title">计划列表：</view>
+</view>
+  
+<block wx:key="{{planId}}" wx:for="{{planList}}" wx:for-item="item" wx:for-index="idx">
+    <view class="plan-container">
+        <view class="plan-img-date">
+            <image src="{{item.bookImgUrl}}" mode="aspectFill"/>
+            <text class='test' wx:if='{{item.isbn13 == "0"}}'>{{item.bookName}}</text>
+            <view class="plan-date">
+                <text class='plan-title'>{{item.bookName}}</text>
+                <text>日期：{{item.dateStart}} 至 {{item.dateFinish}}</text>
+                <view class='plan-change-schedule'>
+                    <text class='plan-schedule-text'>进度：{{item.pagesFinished}}页 / {{item.pagesTotal}}页</text>
+                </view>
+                <view>
+                    <progress percent='{{item.planPercent}}' active='true' show-info='true'></progress>
+                </view>
+                <view class="plan-button-list">
+                <text class="refresh-btn"  catchtap="onTapToDetail" data-plan-id="{{item.planId}}">-查看详情-</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view class='delbutton'>
+    <text class='deltext' bindtap="deleteConfirm" >-删除该好友-</text>
+</view>

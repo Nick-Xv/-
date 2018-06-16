@@ -1,0 +1,93 @@
+<!--pages/search/search.wxml-->
+<view class="page">
+    <view >
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="search" style='color:#006DF0'>搜索</view>
+          </view>
+    </view>
+    <block wx:key="id" wx:if="{{immediateReturn == 'false'}}" wx:for="{{books}}">
+        <navigator class="ibox-list-nav"  url="../book-detail/book-detail?id={{item.id}}">
+            <view class="ibox-list">
+                <image class="ibox-list-img" src="{{item.image}}"></image>
+                <view class="ibox-list-infos">
+                    <view class="ibox-list-title">{{item.title}}</view>
+                    <view class="ibox-list-star">
+                        <image  class="star-img " src="{{item.rating.block}}"></image>
+                        <text class="average-rating">{{item.rating.average}}</text>
+                    </view>
+                    <view class="ibox-list-tags">
+                        <!--<text wx:for="{{item.tags}}" wx:for-item="item"  >{{item.title}}</text>-->
+                        <text wx:if="{{item.tags[0].title}}">{{item.tags[0].title}}</text>
+                        <text wx:if="{{item.tags[1].title}}">{{item.tags[1].title}}</text>
+                        <text wx:if="{{item.tags[2].title}}">{{item.tags[2].title}}</text>
+                    </view>
+                    <view class="ibox-list-author">作者：{{item.author[0]}}</view>
+
+                    <view class="ibox-list-summary">{{item.summary}}</view>
+                </view>
+            </view>
+            <view class="widget-line"></view>
+        </navigator>
+    </block>
+    <block wx:key="id" wx:for="{{books}}" wx:if="{{immediateReturn == 'plan'}}">
+        <view class="ibox-list-nav">
+            <view class="ibox-list" data-detail="{{item}}" bindtap="newPlan">
+                <image class="ibox-list-img" src="{{item.image}}"></image>
+                <view class="ibox-list-infos">
+                    <view class="ibox-list-title">{{item.title}}</view>
+                    <view class="ibox-list-star">
+                        <image  class="star-img " src="{{item.rating.block}}"></image>
+                        <text class="average-rating">{{item.rating.average}}</text>
+                    </view>
+                    <view class="ibox-list-tags">
+                        <!--<text wx:for="{{item.tags}}" wx:for-item="item"  >{{item.title}}</text>-->
+                        <text wx:if="{{item.tags[0].title}}">{{item.tags[0].title}}</text>
+                        <text wx:if="{{item.tags[1].title}}">{{item.tags[1].title}}</text>
+                        <text wx:if="{{item.tags[2].title}}">{{item.tags[2].title}}</text>
+                    </view>
+                    <view class="ibox-list-author">作者：{{item.author[0]}}</view>
+
+                    <view class="ibox-list-summary">{{item.summary}}</view>
+                </view>
+            </view>
+            <view class="widget-line"></view>
+        </view>
+    </block>
+    <block wx:key="id" wx:for="{{books}}" wx:if="{{immediateReturn == 'note'}}">
+        <navigator class="ibox-list-nav" url="../new-plan/new-plan?id={{item.id}}" open-type="redirectTo">
+            <view class="ibox-list">
+                <image class="ibox-list-img" src="{{item.image}}"></image>
+                <view class="ibox-list-infos">
+                    <view class="ibox-list-title">{{item.title}}</view>
+                    <view class="ibox-list-star">
+                        <image  class="star-img " src="{{item.rating.block}}"></image>
+                        <text class="average-rating">{{item.rating.average}}</text>
+                    </view>
+                    <view class="ibox-list-tags">
+                        <!--<text wx:for="{{item.tags}}" wx:for-item="item"  >{{item.title}}</text>-->
+                        <text wx:if="{{item.tags[0].title}}">{{item.tags[0].title}}</text>
+                        <text wx:if="{{item.tags[1].title}}">{{item.tags[1].title}}</text>
+                        <text wx:if="{{item.tags[2].title}}">{{item.tags[2].title}}</text>
+                    </view>
+                    <view class="ibox-list-author">作者：{{item.author[0]}}</view>
+
+                    <view class="ibox-list-summary">{{item.summary}}</view>
+                </view>
+            </view>
+            <view class="widget-line"></view>
+        </navigator>
+    </block>
+</view>

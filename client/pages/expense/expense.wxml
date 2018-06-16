@@ -1,0 +1,7 @@
+<!--pages/expense/expense.wxml-->
+<view class='whiteback'>
+  <view class='head-banner'>
+    <text class='head-title'>支出</text>
+  </view>
+  <canvas canvas-id="canvas1" class="myCanvas" style="width:{{chartWidth}}px;height:{{chartHeight}}px;"/> 
+</view>
