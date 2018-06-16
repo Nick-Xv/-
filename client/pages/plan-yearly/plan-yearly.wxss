@@ -6,9 +6,9 @@
 }
 
 .head-title{
-  padding: 40rpx;
-  font-size: 2em;
-  color: white;
-  position: relative;
-  top: 150rpx;
+    padding: 40rpx;
+    font-size: 2em;
+    color: white;
+    position: relative; 
+    top: 150rpx;
 }

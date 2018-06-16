@@ -1,10 +1,12 @@
 <template name="book-cover">
     <view class='book-cover-list'>
-      <view wx:for="{{bookList}}" wx:key="{{bookList}}">
+      <view wx:for="{{bookList}}" wx:key="{{bookList}}" wx:for-index="idx">
          <navigator  url="../plan/plan-detail/plan-detail?id={{item.planId}}"> 
             <view class="book-cover">
                 <image class="book-cover-img" src="{{item.bookImgUrl}}"></image>
-                <text class='test' wx:if='{{item.isbn13 == "0"}}'>{{item.bookName}}</text>
+                <text class='test1' wx:if='{{item.isbn13 == "0"  && idx%3 == 0}}'>{{item.bookName}}</text>
+                <text class='test2' wx:if='{{item.isbn13 == "0" && idx%3 == 1}}'>{{item.bookName}}</text>
+                <text class='test3' wx:if='{{item.isbn13 == "0" && idx%3 == 2}}'>{{item.bookName}}</text>
             </view>
          </navigator> 
       </view>

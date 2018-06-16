@@ -313,6 +313,10 @@ Page({
                 that.setData({
                     planFinished: result.data.num
                 })
+                if(info){
+                    info.finished = result.data.num
+                    wx.setStorageSync("userAnnualPlan",info)
+                }
             }
         })
         wx.request({

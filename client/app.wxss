@@ -27,18 +27,41 @@
   box-shadow: 6rpx 6rpx 6rpx 4rpx rgba(0,0,0,0.1);
 }
 
-.test{
+.test1{
     font-size: 25rpx;
     position: absolute;
     text-shadow: 5px 2px 6px rgba(0,0,0,0.3);
-    /* float: left; */
     color: white;
     letter-spacing: 2rpx;
     width: 160rpx;
-      text-align:center;   
-     /* align-items:center;    */
-    margin-left: 22rpx;  
+    text-align:center;   
+    margin-left: 75rpx;  
     margin-top: 50rpx;
+    left: 0;
+}
+.test2{
+    font-size: 25rpx;
+    position: absolute;
+    text-shadow: 5px 2px 6px rgba(0,0,0,0.3);
+    color: white;
+    letter-spacing: 2rpx;
+    width: 160rpx;
+    text-align:center;   
+    margin-left: 300rpx;  
+    margin-top: 50rpx;
+    left: 0;
+}
+.test3{
+    font-size: 25rpx;
+    position: absolute;
+    text-shadow: 5px 2px 6px rgba(0,0,0,0.3);
+    color: white;
+    letter-spacing: 2rpx;
+    width: 160rpx;
+    text-align:center;   
+    margin-right: 70rpx;  
+    margin-top: 50rpx;
+    right: 0;
 }
 
 page{
